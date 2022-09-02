@@ -1,7 +1,3 @@
-const list = document.getElementsByClassName("movies-list")
-const watchBtn = document.getElementsByClassName("add-watchlist")
-const mainCon = document.getElementsByClassName("watch-container")
-
 function MovieList(data){
     Object.assign(this, data)
 
