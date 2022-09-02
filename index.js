@@ -1,3 +1,5 @@
+// import {MovieList} from "/movieHtmlGen.js"
+
 const list = document.getElementsByClassName("movies-list")
 const searchBar = document.getElementById("search-bar")
 const searchBtn = document.getElementById("search-button")
@@ -27,7 +29,7 @@ searchBtn.addEventListener("click",function(){
 }
 
 async function getImdbInfo(id){
-    const res = await fetch(`https://www.omdbapi.com/?i=${id}&apikey=aae68c83`)
+    const res = await fetch(`http://www.omdbapi.com/?i=${id}&apikey=aae68c83`)
     const data = await res.json()
     if(data.Plot.length > 10){
     const movies = new MovieList(data)
@@ -41,8 +43,8 @@ buttonAssign()
 function buttonAssign(id){
   for (let i = 0; i < list.length; i++){
     watchBtn[i].addEventListener("click",function(){
-      let movieID = movieSection[0].children[i].children[0].textContent
-      const html = movieSection[0].children[i].innerHTML
+      let movieID = list[i].children[0].textContent
+      const html = list[i].innerHTML
       localStorage.setItem(`${movieID}`, html)
     })
   }
