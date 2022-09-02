@@ -29,7 +29,7 @@ searchBtn.addEventListener("click",function(){
 }
 
 async function getImdbInfo(id){
-    const res = await fetch(`http://www.omdbapi.com/?i=${id}&apikey=aae68c83`)
+    const res = await fetch(`https://www.omdbapi.com/?i=${id}&apikey=aae68c83`)
     const data = await res.json()
     if(data.Plot.length > 10){
     const movies = new MovieList(data)
