@@ -30,4 +30,4 @@ function MovieList(data){
 
 
 
-export {MovieList}
+
